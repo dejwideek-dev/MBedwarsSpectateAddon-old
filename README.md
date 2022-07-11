@@ -1,6 +1,6 @@
 # Spectate Addon for MBedwars
 
-![ ](https://www.spigotmc.org/attachments/spawning-in-spectator-mode-1-png.713772/)
+![ ](/SpectateAddon.png)
 
 Simple addon for [MBedwars](https://mbedwars.com/product/marcelys-bedwars). You can spectate players if playing a game!
 
