@@ -1,0 +1,10 @@
+name: MBedwarsSpectateAddon
+version: 1.0
+authors: [dejwideek]
+depend: [MBedwars]
+main: pl.dejwideek.mbwspectateaddon.SpectateAddon
+commands:
+  watch:
+    aliases:
+      - spectate
+    description: Watch player

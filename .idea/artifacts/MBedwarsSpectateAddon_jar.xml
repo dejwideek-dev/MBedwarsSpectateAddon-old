@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="MBedwarsSpectateAddon:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/MBedwarsSpectateAddon_jar</output-path>
+    <root id="archive" name="MBedwarsSpectateAddon.jar">
+      <element id="module-output" name="MBedwarsSpectateAddon" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/dev/dejvokep/boosted-yaml-spigot/1.2/boosted-yaml-spigot-1.2.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

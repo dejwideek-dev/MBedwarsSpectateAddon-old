@@ -1,0 +1,21 @@
+#Spectate Addon for MBedwars by dejwideek
+
+#Don't change this!
+config-version: 1
+
+#Permission for command
+Permission: "bw.spectate"
+
+#Messages
+Messages:
+  Usage: "&cUsage: /watch <player>"
+  Yourself: "&cYou cannot spectate yourself!"
+  Not-Found: "&cThis player isn't online!"
+  No-Inside-Arena: "&cThis player isn't playing!"
+  Already-Ending: "&cThis player's game is over!"
+
+  #Available placeholder: %permission%
+  No-Permission: "&cYou must have permission &4%permission% &cto do this!"
+
+  #Available placeholders: %player%, %arena%
+  Teleported: "&eTeleported to &6%player% &7(&c%arena%&7)"
