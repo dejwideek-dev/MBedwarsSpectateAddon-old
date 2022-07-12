@@ -11,3 +11,4 @@ Required MBedwars version: 5.0 or higher
 
 
 **[Discord Server Support](https://discord.gg/UzfHG2PYTh)**
+**[Plugin's Wiki](https://dejwideek.gitbook.io/mbedwarsspectateaddon)
