@@ -3,7 +3,7 @@
 #Don't change this!
 config-version: 1
 
-#Permission for command
+#Permission for /watch command
 Permission: "bw.spectate"
 
 #Messages

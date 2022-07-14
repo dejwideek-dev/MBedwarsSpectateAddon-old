@@ -23,7 +23,7 @@ import java.io.IOException;
 @SuppressWarnings("ALL")
 public class SpectateAddon extends JavaPlugin implements CommandExecutor {
 
-    private YamlDocument config;
+    public YamlDocument config;
 
     @Override
     public void onEnable() {
