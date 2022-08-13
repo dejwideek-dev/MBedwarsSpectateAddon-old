@@ -7,14 +7,13 @@ import dev.dejvokep.boostedyaml.settings.general.GeneralSettings;
 import dev.dejvokep.boostedyaml.settings.loader.LoaderSettings;
 import dev.dejvokep.boostedyaml.settings.updater.UpdaterSettings;
 import org.bukkit.Bukkit;
-import org.bukkit.command.CommandExecutor;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.File;
 import java.io.IOException;
 
 @SuppressWarnings("ALL")
-public class SpectateAddon extends JavaPlugin implements CommandExecutor {
+public class SpectateAddon extends JavaPlugin {
 
     public YamlDocument config;
 
@@ -42,6 +41,16 @@ public class SpectateAddon extends JavaPlugin implements CommandExecutor {
             } catch (IOException ex) {
                 ex.printStackTrace();
             }
+
+            new UpdateChecker(this, 103287).getVersion(version -> {
+                if (this.getDescription().getVersion().equals(version)) {
+                    this.getLogger().info("You are using latest version.");
+                }
+                else {
+                    this.getLogger().info("There is a new update available. (v" + this.getDescription().getVersion() + ")");
+                    this.getLogger().info("https://spigotmc.org/resources/103287/updates");
+                }
+            });
 
             this.getCommand("watch").setExecutor(new SpectateCommand(this));
         }
