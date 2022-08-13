@@ -10,6 +10,7 @@ Supported version: 1.8.x-1.19.x
 Required MBedwars version: 5.0 or higher
 
 
-**[Discord Server Support](https://discord.gg/UzfHG2PYTh)**
+
+**[Discord Support Server](https://discord.gg/P9WjbNyVFH)**
 
 **[Plugin's Wiki](https://dejwideek.gitbook.io/mbedwarsspectateaddon)**
