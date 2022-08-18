@@ -1,5 +1,7 @@
 package pl.dejwideek.mbwspectateaddon;
 
+import pl.dejwideek.mbwspectateaddon.commands.ReloadCommand;
+import pl.dejwideek.mbwspectateaddon.commands.SpectateCommand;
 import dev.dejvokep.boostedyaml.YamlDocument;
 import dev.dejvokep.boostedyaml.dvs.versioning.BasicVersioning;
 import dev.dejvokep.boostedyaml.settings.dumper.DumperSettings;
@@ -53,6 +55,7 @@ public class SpectateAddon extends JavaPlugin {
             });
 
             this.getCommand("watch").setExecutor(new SpectateCommand(this));
+            this.getCommand("spectaddonreload").setExecutor(new ReloadCommand(this));
         }
         else {
             this.getLogger().warning("MBedwars is not enabled!");

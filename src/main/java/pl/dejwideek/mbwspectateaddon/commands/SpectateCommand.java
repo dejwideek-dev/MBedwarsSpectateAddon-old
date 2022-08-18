@@ -1,4 +1,4 @@
-package pl.dejwideek.mbwspectateaddon;
+package pl.dejwideek.mbwspectateaddon.commands;
 
 import de.marcely.bedwars.api.BedwarsAPI;
 import de.marcely.bedwars.api.arena.Arena;
@@ -9,6 +9,7 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import pl.dejwideek.mbwspectateaddon.SpectateAddon;
 
 @SuppressWarnings("ALL")
 public class SpectateCommand implements CommandExecutor {
@@ -25,7 +26,7 @@ public class SpectateCommand implements CommandExecutor {
             if (commandSender instanceof Player) {
                 Player p = (Player) commandSender;
 
-                if (p.hasPermission(plugin.config.getString("Permission"))) {
+                if (p.hasPermission(plugin.config.getString("Permissions.Spectate"))) {
                     if (strings.length == 0) {
                         p.sendMessage(ChatColor.translateAlternateColorCodes('&', plugin.config.getString("Messages.Usage")));
                     }
@@ -75,7 +76,7 @@ public class SpectateCommand implements CommandExecutor {
                 } else {
                     p.sendMessage(ChatColor.translateAlternateColorCodes(
                             '&', plugin.config.getString("Messages.No-Permission")
-                                    .replaceAll("%permission%", plugin.config.getString("Permission"))));
+                                    .replaceAll("%permission%", plugin.config.getString("Permissions.Spectate"))));
                     return;
                 }
             }

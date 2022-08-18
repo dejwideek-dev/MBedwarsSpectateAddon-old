@@ -3,8 +3,10 @@
 #Don't change this!
 config-version: 1
 
-#Permission for /watch command
-Permission: "bw.spectate"
+#Permissions
+Permissions:
+  Spectate: "bw.spectate"
+  Reload: "bw.spectaddon.reload"
 
 #Messages
 Messages:
@@ -19,3 +21,5 @@ Messages:
 
   #Available placeholders: %player%, %arena%
   Teleported: "&eTeleported to &6%player% &7(&c%arena%&7)"
+
+  Reloaded: "&eSuccessfully reloaded configuration file!"
