@@ -1,5 +1,5 @@
 name: MBedwarsSpectateAddon
-version: 1.2.0
+version: 1.2.1
 authors: [dejwideek]
 depend: [MBedwars]
 main: pl.dejwideek.mbwspectateaddon.SpectateAddon
@@ -10,3 +10,8 @@ commands:
       - spec
       - spect
     description: Watch player
+  spectaddonreload:
+    aliases:
+      - spectateaddonreload
+      - sareload
+    description: Reload config file
