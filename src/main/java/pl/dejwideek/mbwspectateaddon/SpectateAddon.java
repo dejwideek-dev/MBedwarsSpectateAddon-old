@@ -49,7 +49,7 @@ public class SpectateAddon extends JavaPlugin {
                     this.getLogger().info("You are using latest version.");
                 }
                 else {
-                    this.getLogger().info("There is a new update available. (v" + this.getDescription().getVersion() + ")");
+                    this.getLogger().info("There is a new update available. (v" + version + ")");
                     this.getLogger().info("https://spigotmc.org/resources/103287/updates");
                 }
             });
