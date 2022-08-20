@@ -1,9 +1,10 @@
 package pl.dejwideek.mbwspectateaddon.commands;
 
 import de.marcely.bedwars.api.BedwarsAPI;
-import de.marcely.bedwars.api.arena.Arena;
 import de.marcely.bedwars.api.arena.ArenaStatus;
-import org.bukkit.Bukkit;
+import de.marcely.bedwars.api.remote.RemoteAPI;
+import de.marcely.bedwars.api.remote.RemoteArena;
+import de.marcely.bedwars.api.remote.RemotePlayer;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -31,33 +32,32 @@ public class SpectateCommand implements CommandExecutor {
                         p.sendMessage(ChatColor.translateAlternateColorCodes('&', plugin.config.getString("Messages.Usage")));
                     }
                     if (strings.length >= 1) {
-                        Player target = Bukkit.getPlayer(strings[0]);
+                        RemotePlayer target = RemoteAPI.get().getOnlinePlayer(strings[0]);
+                        RemotePlayer player = RemoteAPI.get().getOnlinePlayer(p);
 
-                        if (target == p) {
-                            p.sendMessage(ChatColor.translateAlternateColorCodes('&', plugin.config.getString("Messages.Yourself")));
-                            return;
-                        }
                         if (target != null) {
-                            Arena a = BedwarsAPI.getGameAPI().getArenaByPlayer(target);
+                            if (target.asBukkit() == p) {
+                                p.sendMessage(ChatColor.translateAlternateColorCodes('&', plugin.config.getString("Messages.Yourself")));
+                                return;
+                            }
+                            RemoteArena a = RemoteAPI.get().getArenaByPlayingPlayer(target);
 
                             if (a != null) {
                                 ArenaStatus status = a.getStatus();
 
                                 if (status.equals(ArenaStatus.LOBBY)) {
-                                    a.addPlayer(p);
-                                    p.teleport(target);
                                     p.sendMessage(ChatColor.translateAlternateColorCodes(
                                             '&', plugin.config.getString("Messages.Teleported")
                                                     .replaceAll("%player%", target.getName())
                                                     .replaceAll("%arena%", a.getName())));
+                                    a.addPlayer(player);
                                 }
                                 if (status.equals(ArenaStatus.RUNNING)) {
-                                    a.addSpectator(p);
-                                    p.teleport(target);
                                     p.sendMessage(ChatColor.translateAlternateColorCodes(
                                             '&', plugin.config.getString("Messages.Teleported")
                                                     .replaceAll("%player%", target.getName())
                                                     .replaceAll("%arena%", a.getName())));
+                                    a.addSpectator(player);
                                 }
                                 if (status.equals(ArenaStatus.END_LOBBY)) {
                                     p.sendMessage(ChatColor.translateAlternateColorCodes('&', plugin.config.getString("Messages.Already-Ending")));
