@@ -7,6 +7,8 @@ Simple addon for [MBedwars](https://mbedwars.com/product/marcelys-bedwars). You 
 
 Supported version: 1.8.x-1.19.x
 
+Addon supports ProxySync. (v2)
+
 Required MBedwars version: 5.0 or higher
 
 
