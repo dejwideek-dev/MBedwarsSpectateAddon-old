@@ -11,6 +11,9 @@
   <component name="ChangeListManager">
     <list default="true" id="d3337185-1938-44d3-ac4d-d31245489b69" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/dejwideek/mbwspectateaddon/SpectateAddon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/dejwideek/mbwspectateaddon/SpectateAddon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/plugin.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
