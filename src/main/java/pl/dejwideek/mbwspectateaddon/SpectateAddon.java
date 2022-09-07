@@ -22,7 +22,7 @@ public class SpectateAddon extends JavaPlugin {
     @Override
     public void onEnable() {
         if(Bukkit.getPluginManager().getPlugin("MBedwars") != null) {
-            final int supportedAPIVersion = 11;
+            final int supportedAPIVersion = 14;
 
             try {
                 Class apiClass = Class.forName("de.marcely.bedwars.api.BedwarsAPI");
@@ -31,13 +31,7 @@ public class SpectateAddon extends JavaPlugin {
                 if (apiVersion < supportedAPIVersion)
                     throw new IllegalStateException();
             } catch(Exception e) {
-                this.getLogger().warning("Your MBedwars version is not supported. Supported version: 5.0.11 or higher!");
-                Bukkit.getPluginManager().disablePlugin(this);
-                return;
-            }
-            if(Bukkit.getPluginManager().getPlugin("MBedwars")
-                    .getDescription().getVersion().equals("5.0.10")) {
-                this.getLogger().warning("Your MBedwars version is not supported. Supported version: 5.0.11 or higher!");
+                this.getLogger().warning("Your MBedwars version is not supported. Supported version: 5.0.14 or higher!");
                 Bukkit.getPluginManager().disablePlugin(this);
                 return;
             }
