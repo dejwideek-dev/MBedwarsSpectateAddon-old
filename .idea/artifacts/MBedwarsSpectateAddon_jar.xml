@@ -3,7 +3,9 @@
     <output-path>$PROJECT_DIR$/out/artifacts/MBedwarsSpectateAddon_jar</output-path>
     <root id="archive" name="MBedwarsSpectateAddon.jar">
       <element id="module-output" name="MBedwarsSpectateAddon" />
-      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/dev/dejvokep/boosted-yaml-spigot/1.2/boosted-yaml-spigot-1.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/iridium/IridiumColorAPI/1.0.6/IridiumColorAPI-1.0.6.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/dev/dejvokep/boosted-yaml/1.0/boosted-yaml-1.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/co/aikar/acf-bukkit/0.5.1-SNAPSHOT/acf-bukkit-0.5.1-20221114.001801-22.jar" path-in-jar="/" />
     </root>
   </artifact>
 </component>

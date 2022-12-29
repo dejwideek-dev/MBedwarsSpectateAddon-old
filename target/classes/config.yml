@@ -1,5 +1,22 @@
 #Spectate Addon for MBedwars by dejwideek
 
+#Hex color: <SOLID:(hex without #)>
+#Example: "<SOLID:fdfdfd>hex color"
+
+#Hex gradient color:
+#- start variable: <GRADIENT:(hex without #)>
+#- end variable: </GRADIENT:(hex without #)>
+#Example: "<GRADIENT:000000>gradient</GRADIENT:ffffff>"
+
+#Hex rainbow color:
+#- start variable: <RAINBOW(saturation value)>
+#- end variable: </RAINBOW>
+#Smaller value: darker
+#Higher value: brighter
+#Example: "<RAINBOW1>rainbow</RAINBOW>"
+
+#This features works only on 1.16+ version
+
 #Don't change this!
 config-version: 1
 
