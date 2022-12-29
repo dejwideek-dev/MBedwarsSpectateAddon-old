@@ -9,7 +9,7 @@ Supported version: 1.8.x-1.19.x
 
 Addon supports ProxySync. (v2)
 
-Required MBedwars version: 5.0 or higher
+Required MBedwars version: for **v1** 5.0 or higher, for **v2** 5.0.14 or higher
 
 
 
