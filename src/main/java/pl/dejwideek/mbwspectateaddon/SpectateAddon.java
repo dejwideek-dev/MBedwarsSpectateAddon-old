@@ -1,7 +1,6 @@
 package pl.dejwideek.mbwspectateaddon;
 
-import pl.dejwideek.mbwspectateaddon.commands.ReloadCommand;
-import pl.dejwideek.mbwspectateaddon.commands.SpectateCommand;
+import co.aikar.commands.BukkitCommandManager;
 import dev.dejvokep.boostedyaml.YamlDocument;
 import dev.dejvokep.boostedyaml.dvs.versioning.BasicVersioning;
 import dev.dejvokep.boostedyaml.settings.dumper.DumperSettings;
@@ -10,6 +9,8 @@ import dev.dejvokep.boostedyaml.settings.loader.LoaderSettings;
 import dev.dejvokep.boostedyaml.settings.updater.UpdaterSettings;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
+import pl.dejwideek.mbwspectateaddon.commands.ReloadCmd;
+import pl.dejwideek.mbwspectateaddon.commands.SpectateCmd;
 
 import java.io.File;
 import java.io.IOException;
@@ -44,22 +45,31 @@ public class SpectateAddon extends JavaPlugin {
                 ex.printStackTrace();
             }
 
-            new UpdateChecker(this, 103287).getVersion(version -> {
-                if (this.getDescription().getVersion().equals(version)) {
-                    this.getLogger().info("You are using latest version.");
-                }
-                else {
-                    this.getLogger().info("There is a new update available. (v" + version + ")");
-                    this.getLogger().info("https://spigotmc.org/resources/103287/updates");
-                }
-            });
-
-            this.getCommand("watch").setExecutor(new SpectateCommand(this));
-            this.getCommand("spectaddonreload").setExecutor(new ReloadCommand(this));
+            updateCheck();
+            registerCommands();
         }
         else {
             this.getLogger().warning("MBedwars is not enabled!");
             Bukkit.getPluginManager().disablePlugin(this);
         }
+    }
+
+    public void registerCommands() {
+        BukkitCommandManager manager = new BukkitCommandManager(this);
+
+        manager.registerCommand(new SpectateCmd(this));
+        manager.registerCommand(new ReloadCmd(this));
+    }
+
+    public void updateCheck() {
+        new UpdateChecker(this, 103287).getVersion(version -> {
+            if (this.getDescription().getVersion().equals(version)) {
+                this.getLogger().info("You are using latest version.");
+            }
+            else {
+                this.getLogger().info("There is a new update available. (v" + version + ")");
+                this.getLogger().info("https://spigotmc.org/resources/103287/updates");
+            }
+        });
     }
 }
